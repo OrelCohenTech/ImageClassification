@@ -32,7 +32,7 @@ class DualStreamDataset(Dataset):
             
             # בדיקה שהתיקייה אכן קיימת (לא רגיש לאותיות גדולות/קטנות בווינדוס, אבל בלינוקס כן)
             if not os.path.exists(folder_path):
-                print(f"⚠️ Warning: Folder '{folder_name}' not found in {root_dir}")
+                print(f" Warning: Folder '{folder_name}' not found in {root_dir}")
                 continue
             
             # ספירת תמונות
@@ -93,17 +93,17 @@ if __name__ == "__main__":
     # 2. לך תיקייה אחת אחורה ותיכנס ל-data
     data_path = os.path.join(current_script_path, '..', 'data')
     
-    print(f"🔎 Looking for data in: {os.path.abspath(data_path)}")
+    print(f" Looking for data in: {os.path.abspath(data_path)}")
     
     # בדיקה האם התיקייה הראשית קיימת
     if not os.path.exists(data_path):
-        print(f"❌ Error: The folder '{data_path}' does not exist!")
+        print(f" Error: The folder '{data_path}' does not exist!")
     else:
         # יצירת ה-Dataset עם הנתיב המוחלט
         ds = DualStreamDataset(root_dir=data_path) 
         
         if len(ds) > 0:
-            print(f"\n✅ Success! Total images: {len(ds)}")
+            print(f"\n Success! Total images: {len(ds)}")
             
             # בדיקת דוגמה אחת כדי לראות שהכל תקין
             try:
@@ -114,5 +114,5 @@ if __name__ == "__main__":
             except Exception as e:
                 print(f"Error loading sample: {e}")
         else:
-            print("\n❌ Error: No images found inside the folders.")
+            print("\n Error: No images found inside the folders.")
             print("Please check: inside 'data' -> do you have 'REAL', '2D', '3D' folders?")
