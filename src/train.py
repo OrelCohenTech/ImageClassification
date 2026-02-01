@@ -16,7 +16,7 @@ NUM_EPOCHS = 10        # כמה פעמים עוברים על כל הדאטה
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def train_model():
-    print(f"🚀 Starting training on device: {DEVICE}")
+    print(f" Starting training on device: {DEVICE}")
 
     # 1. מציאת נתיב הדאטה באופן דינמי
     current_script_path = os.path.dirname(os.path.abspath(__file__))
@@ -95,7 +95,7 @@ def train_model():
     # שמירת המודל
     print("\nSaving model...")
     torch.save(model.state_dict(), "fake_image_classifier.pth")
-    print("✅ Model saved as 'fake_image_classifier.pth'")
+    print(" Model saved as 'fake_image_classifier.pth'")
 
 def validate(model, loader, criterion):
     model.eval()
