@@ -59,7 +59,10 @@ To ensure the model relies on relevant features, we utilized **Grad-CAM** (Gradi
 
 The heatmap below illustrates the model's focus areas. In **Real** images, the model focuses on natural skin textures, while in **Fake** images, it detects artificial smoothness or rendering artifacts.
 
-![Grad-CAM Result](gradcam_result.jpg)
+![Grad-CAM Result](gradcam_result1.jpg)
+![Grad-CAM Result](gradcam_result2.jpg)
+![Grad-CAM Result](gradcam_result3.jpg)
+
 
 ---
 
