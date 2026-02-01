@@ -58,7 +58,7 @@ class GradCAM:
         return cam
 
 def visualize_prediction(image_path):
-    print(f"🎨 Generating Heatmap for: {image_path}...")
+    print(f" Generating Heatmap for: {image_path}...")
     
     # 1. טעינת מודל
     model = FakeDetectDualNet(num_classes=3).to(DEVICE)
@@ -102,7 +102,7 @@ def visualize_prediction(image_path):
     # 7. שמירת התוצאה
     output_filename = "gradcam_result3.jpg"
     cv2.imwrite(output_filename, np.uint8(255 * cam_result))
-    print(f"✅ Saved result to: {output_filename}")
+    print(f" Saved result to: {output_filename}")
     
     # אופציונלי: פתיחת התמונה מיד (רק בווינדוס)
     try:
@@ -117,4 +117,4 @@ if __name__ == "__main__":
     if os.path.exists(img_name):
         visualize_prediction(img_name)
     else:
-        print(f"❌ Image '{img_name}' not found.")
+        print(f" Image '{img_name}' not found.")
