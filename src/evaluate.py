@@ -22,7 +22,7 @@ BATCH_SIZE = 16
 class_names = ['REAL', '2D', '3D']
 
 def evaluate_model():
-    print(f"📊 Starting Evaluation on {DEVICE}...")
+    print(f" Starting Evaluation on {DEVICE}...")
 
     # 1. טעינת הדאטה (בדיוק כמו באימון)
     current_script_path = os.path.dirname(os.path.abspath(__file__))
@@ -43,9 +43,9 @@ def evaluate_model():
     model = FakeDetectDualNet(num_classes=3).to(DEVICE)
     if os.path.exists(MODEL_PATH):
         model.load_state_dict(torch.load(MODEL_PATH, map_location=DEVICE, weights_only=True))
-        print("✅ Model loaded successfully.")
+        print(" Model loaded successfully.")
     else:
-        print(f"❌ Error: Model file '{MODEL_PATH}' not found.")
+        print(f" Error: Model file '{MODEL_PATH}' not found.")
         return
 
     model.eval() # מצב בדיקה
@@ -68,7 +68,7 @@ def evaluate_model():
 
     # 4. חישוב מדדים
     print("\n" + "="*40)
-    print("📋 Classification Report")
+    print(" Classification Report")
     print("="*40)
     print(classification_report(all_labels, all_preds, target_names=class_names))
 
@@ -86,7 +86,7 @@ def evaluate_model():
     
     # שמירת הגרף
     plt.savefig('confusion_matrix.png')
-    print("✅ Confusion Matrix saved as 'confusion_matrix.png'")
+    print(" Confusion Matrix saved as 'confusion_matrix.png'")
     
     # הצגת הגרף על המסך
     plt.show()
