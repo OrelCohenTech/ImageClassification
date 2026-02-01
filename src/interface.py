@@ -70,7 +70,7 @@ def predict(image_path):
     rgb_input, freq_input = prepare_image(image_path)
     if rgb_input is None: return
 
-    print(f"\n🔍 Analyzing image: {image_path}")
+    print(f"\n Analyzing image: {image_path}")
     
     with torch.no_grad():
         # הרצת המודל
@@ -85,8 +85,8 @@ def predict(image_path):
         confidence = score.item() * 100
 
     print("-" * 30)
-    print(f"🤖 Result: {predicted_class}")
-    print(f"📊 Confidence: {confidence:.2f}%")
+    print(f" Result: {predicted_class}")
+    print(f" Confidence: {confidence:.2f}%")
     
     # הדפסת כל ההסתברויות
     print("\nDetailed Probabilities:")
@@ -105,4 +105,4 @@ if __name__ == "__main__":
     if os.path.exists(image_to_test):
         predict(image_to_test)
     else:
-        print(f"❌ Please create/download an image named '{image_to_test}' in the project folder to test.")
+        print(f" Please create/download an image named '{image_to_test}' in the project folder to test.")
