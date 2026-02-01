@@ -65,10 +65,10 @@ if __name__ == "__main__":
     
     print("Testing forward pass...")
     output = model(dummy_rgb, dummy_freq)
-    print(f"\n✅ Model Output Shape: {output.shape}")
+    print(f"\n Model Output Shape: {output.shape}")
     
     # הפלט צריך להיות [2, 3] (2 דוגמאות * 3 מחלקות)
     if output.shape == (2, 3):
-        print("Status: Model is ready for training! 🚀")
+        print("Status: Model is ready for training! ")
     else:
         print("Status: Something is wrong with dimensions.")
